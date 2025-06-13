@@ -1,13 +1,15 @@
 #include "redismodule.h"
 
-#include <stdio.h> 
-#include <unistd.h>  
-#include <stdlib.h> 
-#include <errno.h>   
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <errno.h>
 #include <sys/wait.h>
-#include <sys/types.h> 
+#include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <string.h>
+#include <arpa/inet.h>
 
 int DoCommand(RedisModuleCtx *ctx, RedisModuleString **argv, int argc) {
         if (argc == 2) {
